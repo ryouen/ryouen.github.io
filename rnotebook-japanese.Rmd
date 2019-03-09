@@ -38,12 +38,38 @@ Pythonユーザにおける、Jupyter Notebookに近いものだと考えてい�
 ## インストール等
 [R](https://cran.r-project.org/bin/windows/base/)をインストール  
 [Rstudio](https://www.rstudio.com/)をインストール  
-[MiKTeX](https://miktex.org/download)をインストールする。Basicはだめで、Full版をインストールすること。
+[MiKTeX](https://miktex.org/download)をインストールする。Basicはだめで、Full版をインストールする必要がある。インストール後コンソールから、Update=>Check for updateですべてアップデートしておく。また、mathspecがあるかどうかをPackages で確認し、なければインストール。
+
+
+## Test Run
+ここまでできれば、RStudioを開いて、File => New File => R Notebook します。
+記載のとおり、Ctrl + Shift + K すれば、Rmarkdownという言語で書かれたファイルが、HTML形式でアウトプットされます。
+
+
+## Rmarkdownについて簡単に
+
+Rstudioで、 Ctrl + Alt + I すると、バックグラウンドが灰色の、Rのプログラミングコードを書けるエリアが出現します。
+これを「チャンク/Chunk」と呼びます。
+ここに、コードを記載することができます。それ以外のエリアは、Rmarkdown形式で(pandoc markdown形式で)記載します。  
+  
+
+これらにより、R markdown形式で装飾されたレポートと、Rのコードの実行結果を、同じファイル内で同居させることがでできます。
+
+
+最終的に(renderingされ)出力される文章では、当該コードの直後に、実行結果が表示され、これによって、「解析結果のグラフ」と「どのようにその解析を行ったかのコード」を同居されることができるわけです。また、レポートの際にコード自体が不要なときは、
+
+'''
+{r include=FALSE}
+'''
+というオプションを入れることで、コードを非表示にすることができます。
+
+
+##yamlの設定
 
 
 
 
-```{r include=FALSE}
+```{r}
 #install.packages("bookdown")
 #install.packages("markdown")
 #install.packages("rmarkdown")
