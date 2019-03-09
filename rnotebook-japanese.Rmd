@@ -3,6 +3,7 @@ title: 'R markdown を日本語でpdf/html出力'
 author: 'Ryosuke ISHII'
 date: "March 8, 2019"
 output:
+  bookdown::gitbook: default
   html_document:  
     latex_engine: xelatex
     df_print: paged
@@ -67,7 +68,31 @@ Rstudioで、 Ctrl + Alt + I すると、バックグラウンドが灰色の、
 
 
 ##yamlの設定
+yamlといって、出力のオプションを定義できます。
+とりあえず、書きをCopy & Pasteしてください。
 
+>---
+>title: 'R markdown を日本語でpdf/html出力'
+>author: 'Ryosuke ISHII'
+>date: "March 8, 2019"
+>output:
+>#  bookdown::gitbook: default
+>  html_document:  
+>    latex_engine: xelatex
+>    df_print: paged
+>    toc: no
+>    toc_depth: '2'
+>  pdf_document:
+>#    latex_engine: xelatex
+>    df_print: kable
+>    number_sections: yes
+>    toc: no
+>    toc_depth: 2
+>fontsize: 11pt
+>#bibliography: mybibfile.bib
+>mainfont: Meiryo
+>monofont: Meiryo
+>---
 
 
 
@@ -76,18 +101,20 @@ Rstudioで、 Ctrl + Alt + I すると、バックグラウンドが灰色の、
 #install.packages("rmarkdown")
 #install.packages("knitr")
 #install.packages("devtools", dependencies = TRUE)
+#install.packages("reticulate") #このパッケージを使うと、'''{python} チャンクでPythonを実行する時、チャンクをまたいだ処理も可能になる
 #devtools::install_github("rstudio/rmarkdown")
 library(bookdown)
 library(rmarkdown)
 library(knitr)
-
+library(reticulate)
 ```
 
 
 # 参考としたウェブサイト
- - [R markdown本家ドキュメント](This is an [R Markdown](http://rmarkdown.rstudio.com)
+ - [R markdown本家ドキュメント](http://rmarkdown.rstudio.com)
  - [bookdown本家ドキュメント](https://bookdown.org/yihui/bookdown/)
  - Kazutanさんのページ
+ https://kazutan.github.io/kazutanR/Rmd_intro.htm　
  https://kazutan.github.io/JapanR2016/JapanR2016.html#/enjoy  
  https://github.com/kazutan/bookdown_ja_template
 

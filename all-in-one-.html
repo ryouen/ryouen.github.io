@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R markdown を日本語でpdf/html出力</title>
+  <meta name="description" content="R markdown を日本語でpdf/html出力">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="R markdown を日本語でpdf/html出力" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R markdown を日本語でpdf/html出力" />
+  
+  
+  
+
+<meta name="author" content="Ryosuke ISHII">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="section-2.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="all-in-one-.html"><a href="all-in-one-.html"><i class="fa fa-check"></i><b>1</b> all in one の分析スタイルを。</a><ul>
+<li class="chapter" data-level="1.1" data-path="all-in-one-.html"><a href="all-in-one-.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 前提となる環境</a></li>
+<li class="chapter" data-level="1.2" data-path="all-in-one-.html"><a href="all-in-one-.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> なぜやるのか</a></li>
+<li class="chapter" data-level="1.3" data-path="all-in-one-.html"><a href="all-in-one-.html#section-1.3"><i class="fa fa-check"></i><b>1.3</b> インストール等</a></li>
+<li class="chapter" data-level="1.4" data-path="all-in-one-.html"><a href="all-in-one-.html#test-run"><i class="fa fa-check"></i><b>1.4</b> Test Run</a></li>
+<li class="chapter" data-level="1.5" data-path="all-in-one-.html"><a href="all-in-one-.html#rmarkdown"><i class="fa fa-check"></i><b>1.5</b> Rmarkdownについて簡単に</a></li>
+<li class="chapter" data-level="1.6" data-path="all-in-one-.html"><a href="all-in-one-.html#yaml"><i class="fa fa-check"></i><b>1.6</b> yamlの設定</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i><b>2</b> 参考としたウェブサイト</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R markdown を日本語でpdf/html出力</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">R markdown を日本語でpdf/html出力</h1>
+<p class="author"><em>Ryosuke ISHII</em></p>
+<p class="date"><em>March 8, 2019</em></p>
+</div>
+<div id="all-in-one-" class="section level1">
+<h1><span class="header-section-number">1</span> all in one の分析スタイルを。</h1>
+<div id="section-1.1" class="section level2">
+<h2><span class="header-section-number">1.1</span> 前提となる環境</h2>
+<ul>
+<li>Windows 10</li>
+<li>Rstudio ユーザー</li>
+<li>日本語で書きたい</li>
+</ul>
+</div>
+<div id="section-1.2" class="section level2">
+<h2><span class="header-section-number">1.2</span> なぜやるのか</h2>
+<p>多くのレポートや論文等では、「その場限りのデータ解析」と、「その場限りの解析結果に基づく考察」が書かれています。 その場限りというのは、例えば「Excelで分析する」「分析結果をグラフに表示する」「グラフをパワポに貼る」ということや、 「R でコードを書いていろいろと分析をして、グラフやテーブルを出力する」「ワードにコピペして、論文をつくる」といった使い方のことです。</p>
+<p>ここでは、解析とレポートを同時に行う、Rnotebookの使い方を記載します。 Pythonユーザにおける、Jupyter Notebookに近いものだと考えていただければ大丈夫です。</p>
+</div>
+<div id="section-1.3" class="section level2">
+<h2><span class="header-section-number">1.3</span> インストール等</h2>
+<p><a href="https://cran.r-project.org/bin/windows/base/">R</a>をインストール<br />
+<a href="https://www.rstudio.com/">Rstudio</a>をインストール<br />
+<a href="https://miktex.org/download">MiKTeX</a>をインストールする。Basicはだめで、Full版をインストールする必要がある。インストール後コンソールから、Update=&gt;Check for updateですべてアップデートしておく。また、mathspecがあるかどうかをPackages で確認し、なければインストール。</p>
+</div>
+<div id="test-run" class="section level2">
+<h2><span class="header-section-number">1.4</span> Test Run</h2>
+<p>ここまでできれば、RStudioを開いて、File =&gt; New File =&gt; R Notebook します。 記載のとおり、Ctrl + Shift + K すれば、Rmarkdownという言語で書かれたファイルが、HTML形式でアウトプットされます。</p>
+</div>
+<div id="rmarkdown" class="section level2">
+<h2><span class="header-section-number">1.5</span> Rmarkdownについて簡単に</h2>
+<p>Rstudioで、 Ctrl + Alt + I すると、バックグラウンドが灰色の、Rのプログラミングコードを書けるエリアが出現します。 これを「チャンク/Chunk」と呼びます。 ここに、コードを記載することができます。それ以外のエリアは、Rmarkdown形式で(pandoc markdown形式で)記載します。</p>
+<p>これらにより、R markdown形式で装飾されたレポートと、Rのコードの実行結果を、同じファイル内で同居させることがでできます。</p>
+<p>最終的に(renderingされ)出力される文章では、当該コードの直後に、実行結果が表示され、これによって、「解析結果のグラフ」と「どのようにその解析を行ったかのコード」を同居されることができるわけです。また、レポートの際にコード自体が不要なときは、</p>
+<p>‘’’ {r include=FALSE} ‘’’ というオプションを入れることで、コードを非表示にすることができます。</p>
+<p>なお、R markdownとR Notebookは。ほぼ同じ挙動をしますが、Notebookはこのチャンクごとに結果の確認が可能(Ctrl + Shift + Enter)、前者は不可能なので、こちらがオススメです。</p>
+</div>
+<div id="yaml" class="section level2">
+<h2><span class="header-section-number">1.6</span> yamlの設定</h2>
+<p>yamlといって、出力のオプションを定義できます。 とりあえず、書きをCopy &amp; Pasteしてください。</p>
+<blockquote>
+
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;bookdown&quot;)</span>
+<span class="co">#install.packages(&quot;rmarkdown&quot;)</span>
+<span class="co">#install.packages(&quot;knitr&quot;)</span>
+<span class="co">#install.packages(&quot;devtools&quot;, dependencies = TRUE)</span>
+<span class="co">#install.packages(&quot;reticulate&quot;)</span>
+<span class="co">#devtools::install_github(&quot;rstudio/rmarkdown&quot;)</span>
+<span class="kw">library</span>(bookdown)
+<span class="kw">library</span>(rmarkdown)
+<span class="kw">library</span>(knitr)
+<span class="kw">library</span>(reticulate)</code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="section-2.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>
