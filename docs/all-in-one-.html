@@ -32,14 +32,14 @@
   
   
 
-<link rel="next" href="section-2.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link rel="next" href="gitbook.html">
+<script src="site_libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="site_libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 
 
 
@@ -107,7 +107,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.5" data-path="all-in-one-.html"><a href="all-in-one-.html#rmarkdown"><i class="fa fa-check"></i><b>1.5</b> Rmarkdownについて簡単に</a></li>
 <li class="chapter" data-level="1.6" data-path="all-in-one-.html"><a href="all-in-one-.html#yaml"><i class="fa fa-check"></i><b>1.6</b> yamlの設定</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i><b>2</b> 参考としたウェブサイト</a></li>
+<li class="chapter" data-level="2" data-path="gitbook.html"><a href="gitbook.html"><i class="fa fa-check"></i><b>2</b> gitbookで公開する</a><ul>
+<li class="chapter" data-level="2.1" data-path="gitbook.html"><a href="gitbook.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 環境設定・前処理・インストールなど</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="section-3.html"><a href="section-3.html"><i class="fa fa-check"></i><b>3</b> 参考としたウェブサイト</a></li>
 </ul>
 
       </nav>
@@ -169,16 +172,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <blockquote>
 
 </blockquote>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;bookdown&quot;)</span>
-<span class="co">#install.packages(&quot;rmarkdown&quot;)</span>
-<span class="co">#install.packages(&quot;knitr&quot;)</span>
-<span class="co">#install.packages(&quot;devtools&quot;, dependencies = TRUE)</span>
-<span class="co">#install.packages(&quot;reticulate&quot;)</span>
-<span class="co">#devtools::install_github(&quot;rstudio/rmarkdown&quot;)</span>
-<span class="kw">library</span>(bookdown)
-<span class="kw">library</span>(rmarkdown)
-<span class="kw">library</span>(knitr)
-<span class="kw">library</span>(reticulate)</code></pre></div>
 </div>
 </div>
             </section>
@@ -187,16 +180,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 
-<a href="section-2.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="gitbook.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

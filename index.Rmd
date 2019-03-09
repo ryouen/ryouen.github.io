@@ -21,6 +21,23 @@ mainfont: Meiryo
 monofont: Meiryo
 ---
 
+
+
+```{r}
+#install.packages("bookdown")
+#install.packages("rmarkdown")
+#install.packages("knitr")
+#install.packages("devtools", dependencies = TRUE)
+#install.packages("reticulate") #このパッケージを使うと、'''{python} チャンクでPythonを実行する時、チャンクをまたいだ処理も可能になる
+#devtools::install_github("rstudio/rmarkdown")
+library(bookdown)
+library(rmarkdown)
+library(knitr)
+library(reticulate)
+```
+
+
+
 # all in one の分析スタイルを。
 ##前提となる環境
 - Windows 10
@@ -94,29 +111,34 @@ yamlといって、出力のオプションを定義できます。
 >monofont: Meiryo
 >---
 
+# gitbookで公開する
+
+##環境設定・前処理・インストールなど
+(Gitをダウンロード・インストール)[https://gitforwindows.org/]する。
+
+> bookdown::gitbook: default
+yamlの、コマンドをオンにします。
 
 
+Rstudioで
 ```{r}
-#install.packages("bookdown")
-#install.packages("rmarkdown")
-#install.packages("knitr")
-#install.packages("devtools", dependencies = TRUE)
-#install.packages("reticulate") #このパッケージを使うと、'''{python} チャンクでPythonを実行する時、チャンクをまたいだ処理も可能になる
-#devtools::install_github("rstudio/rmarkdown")
-library(bookdown)
-library(rmarkdown)
-library(knitr)
-library(reticulate)
+file.create('.nojekyll')
 ```
+します。
+先程インストールしたgitのコマンドライン/コンソールから
+
+
 
 
 # 参考としたウェブサイト
  - [R markdown本家ドキュメント](http://rmarkdown.rstudio.com)
  - [bookdown本家ドキュメント](https://bookdown.org/yihui/bookdown/)
+ - https://blog.datascienceheroes.com/how-to-self-publish-a-book-customizing-bookdown/
  - Kazutanさんのページ
- https://kazutan.github.io/kazutanR/Rmd_intro.htm　
+ https://kazutan.github.io/RmdSite_tuto/  
+ https://kazutan.github.io/kazutanR/Rmd_intro.htm  
  https://kazutan.github.io/JapanR2016/JapanR2016.html#/enjoy  
- https://github.com/kazutan/bookdown_ja_template
+ https://github.com/kazutan/bookdown_ja_template  
 
 
 
