@@ -4,7 +4,7 @@ author: 'Ryosuke ISHII'
 date: "March 8, 2019"
 output:
   html_document:  
-#    latex_engine: xelatex
+    latex_engine: xelatex
     df_print: paged
     toc: no
     toc_depth: '2'
@@ -80,6 +80,13 @@ library(rmarkdown)
 library(knitr)
 ```
 
+
+# 参考としたウェブサイト
+ - [bookdown本家ドキュメント](https://bookdown.org/yihui/bookdown/)
+ - Kazutanさんのページ
+ https://kazutan.github.io/JapanR2016/JapanR2016.html#/enjoy  
+ https://github.com/kazutan/bookdown_ja_template
+ 
 
 ```{r include=FALSE}
 #install.packages(c("reshape2", "ggplot2", "e1071"))
