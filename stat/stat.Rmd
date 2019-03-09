@@ -37,11 +37,26 @@ library(knitr)
 library(reticulate)
 ```
 
+```{r}
+#install.packages("dplyr")
+library(dplyr)
+library(ggplot2)
+```
+
+
 #index{-}
 このページでは、機械学習をやってみたい、AI入門したい、あるいは、統計をゼロから学びたい、という方のために、
 統計の基礎を、**わかりやすく、けれど、本質を損なわないように**お伝えしていきます。
 
 筆者はRとPythonを使いますが、[こちらのGithubのリポジトリに利用するファイルをすべて置いて](https://github.com/ryouen/ryouen.github.io/tree/master/stat)おきます。
+```{r}
+
+scatter <- ggplot(data=iris, aes(x = Sepal.Length, y = Sepal.Width)) 
+scatter + geom_point(aes(color=Species, shape=Species)) +
+  xlab("Sepal Length") +  ylab("Sepal Width") +
+  ggtitle("Sepal Length-Width")
+```
+
 
 ###対象読者{-}
  - 手元にあるデータから「真実」を見つけ出したい人
