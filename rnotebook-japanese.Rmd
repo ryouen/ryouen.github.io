@@ -1,0 +1,80 @@
+---
+title: 'R markdown を日本語でpdf/html出力'
+author: 'Ryosuke ISHII'
+date: "March 8, 2019"
+output:
+  html_document:  
+#    latex_engine: xelatex
+    df_print: paged
+    toc: no
+    toc_depth: '2'
+  pdf_document:
+#    latex_engine: xelatex
+    df_print: kable
+    number_sections: yes
+    toc: no
+    toc_depth: 2
+fontsize: 11pt
+#bibliography: mybibfile.bib
+mainfont: Meiryo
+monofont: Meiryo
+---
+
+# all in one の分析スタイルを。
+##前提となる環境
+- Windows 10
+- Rstudio ユーザー
+- 日本語で書きたい
+
+## なぜやるのか
+多くのレポートや論文等では、「その場限りのデータ解析」と、「その場限りの解析結果に基づく考察」が書かれています。
+その場限りというのは、例えば「Excelで分析する」「分析結果をグラフに表示する」「グラフをパワポに貼る」ということや、
+「R でコードを書いていろいろと分析をして、グラフやテーブルを出力する」「ワードにコピペして、論文をつくる」といった使い方のことです。
+
+ここでは、解析とレポートを同時に行う、Rnotebookの使い方を記載します。
+Pythonユーザにおける、Jupyter Notebookに近いものだと考えていただければ大丈夫です。
+
+
+## インストール等
+[R](https://cran.r-project.org/bin/windows/base/)をインストール  
+[Rstudio](https://www.rstudio.com/)をインストール  
+[MiKTeX](https://miktex.org/download)をインストールする。Basicはだめで、Full版をインストールすること。
+
+
+
+
+```{r include=FALSE}
+#install.packages("bookdown")
+#install.packages("markdown")
+#install.packages("rmarkdown")
+#install.packages("knitr")
+library(bookdown)
+library(markdown)
+library(rmarkdown)
+library(knitr)
+```
+
+
+```{r include=FALSE}
+#install.packages(c("reshape2", "ggplot2", "e1071"))
+library(knitr)
+library(ggplot2)
+library(reshape2)
+opts_chunk$set(echo=FALSE, cache=TRUE, message=FALSE)
+options(width = 1000)
+```
+
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
