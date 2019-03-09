@@ -50,7 +50,6 @@ library(ggplot2)
 
 筆者はRとPythonを使いますが、[こちらのGithubのリポジトリに利用するファイルをすべて置いて](https://github.com/ryouen/ryouen.github.io/tree/master/stat)おきます。
 ```{r}
-
 scatter <- ggplot(data=iris, aes(x = Sepal.Length, y = Sepal.Width)) 
 scatter + geom_point(aes(color=Species, shape=Species)) +
   xlab("Sepal Length") +  ylab("Sepal Width") +
