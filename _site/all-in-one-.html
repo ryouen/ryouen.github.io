@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>3 gitbookで公開する | R markdown を日本語でpdf/html出力</title>
-  <meta name="description" content="3 gitbookで公開する | R markdown を日本語でpdf/html出力">
+  <title>2 all in one の分析スタイルを。 | R markdown を日本語でpdf/html出力</title>
+  <meta name="description" content="2 all in one の分析スタイルを。 | R markdown を日本語でpdf/html出力">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="3 gitbookで公開する | R markdown を日本語でpdf/html出力" />
+  <meta property="og:title" content="2 all in one の分析スタイルを。 | R markdown を日本語でpdf/html出力" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 gitbookで公開する | R markdown を日本語でpdf/html出力" />
+  <meta name="twitter:title" content="2 all in one の分析スタイルを。 | R markdown を日本語でpdf/html出力" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="all-in-one-.html">
-<link rel="next" href="section-4.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="gitbook.html">
 <script src="site_libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="site_libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="site_libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -129,18 +129,45 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="gitbook" class="section level1">
-<h1><span class="header-section-number">3</span> gitbookで公開する</h1>
-<div id="section-3.1" class="section level2">
-<h2><span class="header-section-number">3.1</span> 環境設定・前処理・インストールなど</h2>
-<p>(Gitをダウンロード・インストール)[<a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a>]する。</p>
+<div id="all-in-one-" class="section level1">
+<h1><span class="header-section-number">2</span> all in one の分析スタイルを。</h1>
+<div id="section-2.1" class="section level2">
+<h2><span class="header-section-number">2.1</span> 前提となる環境</h2>
+<ul>
+<li>Windows 10</li>
+<li>Rstudio ユーザー</li>
+<li>日本語で書きたい</li>
+</ul>
+</div>
+<div id="section-2.2" class="section level2">
+<h2><span class="header-section-number">2.2</span> なぜやるのか</h2>
+<p>多くのレポートや論文等では、「その場限りのデータ解析」と、「その場限りの解析結果に基づく考察」が書かれています。 その場限りというのは、例えば「Excelで分析する」「分析結果をグラフに表示する」「グラフをパワポに貼る」ということや、 「R でコードを書いていろいろと分析をして、グラフやテーブルを出力する」「ワードにコピペして、論文をつくる」といった使い方のことです。</p>
+<p>ここでは、解析とレポートを同時に行う、Rnotebookの使い方を記載します。 Pythonユーザにおける、Jupyter Notebookに近いものだと考えていただければ大丈夫です。</p>
+</div>
+<div id="section-2.3" class="section level2">
+<h2><span class="header-section-number">2.3</span> インストール等</h2>
+<p><a href="https://cran.r-project.org/bin/windows/base/">R</a>をインストール<br />
+<a href="https://www.rstudio.com/">Rstudio</a>をインストール<br />
+<a href="https://miktex.org/download">MiKTeX</a>をインストールする。Basicはだめで、Full版をインストールする必要がある。インストール後コンソールから、Update=&gt;Check for updateですべてアップデートしておく。また、mathspecがあるかどうかをPackages で確認し、なければインストール。</p>
+</div>
+<div id="test-run" class="section level2">
+<h2><span class="header-section-number">2.4</span> Test Run</h2>
+<p>ここまでできれば、RStudioを開いて、File =&gt; New File =&gt; R Notebook します。 記載のとおり、Ctrl + Shift + K すれば、Rmarkdownという言語で書かれたファイルが、HTML形式でアウトプットされます。</p>
+</div>
+<div id="rmarkdown" class="section level2">
+<h2><span class="header-section-number">2.5</span> Rmarkdownについて簡単に</h2>
+<p>Rstudioで、 Ctrl + Alt + I すると、バックグラウンドが灰色の、Rのプログラミングコードを書けるエリアが出現します。 これを「チャンク/Chunk」と呼びます。 ここに、コードを記載することができます。それ以外のエリアは、Rmarkdown形式で(pandoc markdown形式で)記載します。</p>
+<p>これらにより、R markdown形式で装飾されたレポートと、Rのコードの実行結果を、同じファイル内で同居させることがでできます。</p>
+<p>最終的に(renderingされ)出力される文章では、当該コードの直後に、実行結果が表示され、これによって、「解析結果のグラフ」と「どのようにその解析を行ったかのコード」を同居されることができるわけです。また、レポートの際にコード自体が不要なときは、</p>
+<p>‘’’ {r include=FALSE} ‘’’ というオプションを入れることで、コードを非表示にすることができます。</p>
+<p>なお、R markdownとR Notebookは。ほぼ同じ挙動をしますが、Notebookはこのチャンクごとに結果の確認が可能(Ctrl + Shift + Enter)、前者は不可能なので、こちらがオススメです。</p>
+</div>
+<div id="yaml" class="section level2">
+<h2><span class="header-section-number">2.6</span> yamlの設定</h2>
+<p>yamlといって、出力のオプションを定義できます。 とりあえず、書きをCopy &amp; Pasteしてください。</p>
 <blockquote>
-<p>bookdown::gitbook: default yamlの、コマンドをオンにします。</p>
+
 </blockquote>
-<p>Rstudioで</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">file.create</span>(<span class="st">&#39;.nojekyll&#39;</span>)</code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<p>します。 先程インストールしたgitのコマンドライン/コンソールから</p>
 </div>
 </div>
             </section>
@@ -148,8 +175,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="all-in-one-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="section-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gitbook.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="site_libs/gitbook-2.6.7/js/app.min.js"></script>
