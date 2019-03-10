@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>機械学習のための、ゼロからはじめる統計のお話</title>
-  <meta name="description" content="機械学習のための、ゼロからはじめる統計のお話">
+  <title>意思決定のための、ゼロからはじめる統計とデータ分析のお話</title>
+  <meta name="description" content="意思決定のための、ゼロからはじめる統計とデータ分析のお話">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="機械学習のための、ゼロからはじめる統計のお話" />
+  <meta property="og:title" content="意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="機械学習のための、ゼロからはじめる統計のお話" />
+  <meta name="twitter:title" content="意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
   
   
   
@@ -121,7 +121,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">機械学習のための、ゼロからはじめる統計のお話</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">意思決定のための、ゼロからはじめる統計とデータ分析のお話</a>
           </h1>
         </div>
 
@@ -130,14 +130,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">機械学習のための、ゼロからはじめる統計のお話</h1>
+<h1 class="title">意思決定のための、ゼロからはじめる統計とデータ分析のお話</h1>
 <p class="author"><em>石井 遼介 / <span class="citation">@ryouen</span></em></p>
 <p class="date"><em>March 8, 2019</em></p>
 </div>
 <div id="index" class="section level1 unnumbered">
 <h1>index</h1>
-<p>このページでは、機械学習をやってみたい、AI入門したい、あるいは、統計をゼロから学びたい、という方のために、 統計の基礎を、<strong>わかりやすく、けれど、本質を損なわないように</strong>お伝えしていきます。</p>
-<p>筆者はRとPythonを使いますが、<a href="https://github.com/ryouen/ryouen.github.io/tree/master/stat">こちらのGithubのリポジトリに利用するファイルをすべて置いて</a>おきます。</p>
+<p>このページでは「意思決定のためのデータ分析」入門編として、機械学習をやってみたい、AI入門したい、あるいは、統計をゼロから学びたい、という方のために、統計やデータ分析の基礎を、<strong>わかりやすく、けれど、本質を損なわないように</strong>お伝えしていきます。</p>
+<p>データ分析と統計の基礎を学ぶことで、 - 未来を予測し、自分や相手、顧客の行動を制御する - いま、何が起きているのか。起きていることから、真実に迫る構造を抽出する ことが上達します。</p>
+<p>筆者は、 - 慶應義塾大学 システムデザイン・マネジメントで行動科学の研究を行う、日常的にデータ分析を行う研究者であるとともに、 - ビジネスと経営のフィールドでも多くの提案を通し、人生の時間を賭けるに値すると感じる、様々なプロジェクトを実現してきました。 - 難しい行動科学の内容を一般向けにわかりやすく記載した「悩みにふりまわされて しんどいあなたへ」の著書があります。</p>
+<p>また、統計やデータサイエンスまわりでは - 東京大学工学部で、卒論で三次元データを取り扱った - シンガポール国立大学のMBAプログラムで、Overallの成績4.7/5.0 - MITのオンラインプログラムData Analysis for Social Scientistsにて、Student TAとして選ばれる。 - New York Universityで Data Science for Businesを教えるProvost先生/統計の専門家Simonoff先生に師事 などのバックグラウンドがあります。</p>
+<p>筆者はRとPythonを使いますが、<a href="https://github.com/ryouen/ryouen.github.io/tree/master/stat">こちらのGithubのリポジトリに利用するファイルをすべて置いて</a>おきます。環境構築には、Rは<a href="https://cran.r-project.org/src/base/R-3">R 3.5.2</a> と、<a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a>、Pythonは<a href="https://docs.anaconda.com/anaconda/install/">Anaconda</a>のJupyter Notebookを使っています。</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scatter &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Sepal.Width)) 
 scatter <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span>Species, <span class="dt">shape=</span>Species)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Sepal Length&quot;</span>) <span class="op">+</span><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Sepal Width&quot;</span>) <span class="op">+</span>
