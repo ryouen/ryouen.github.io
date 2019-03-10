@@ -139,36 +139,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>例えば、あなたがマーケティングの責任者であれば、マーケティング予算が、説明変数<span class="math inline">\(x\)</span>、それによって予測する売上が、目的変数<span class="math inline">\(y\)</span>ということになります。これは、マーケティング予算は適切な権限があれば、決めることができる(操作可能)ですが、売上は結果に過ぎないため、売上を直接コントロールすることはできないからです。</p>
 <p>また、もし「どこに住もうかな」とあなたが考えているとすると、 人口密度が説明変数 <span class="math inline">\(x\)</span> で、犯罪率が目的変数 <span class="math inline">\(y\)</span> だということになります。 住む場所、つまり人口密度はこれから選ぶことができますが、犯罪率自体はコントロールできないからです。</p>
 <p>このように、<span class="math inline">\(x\)</span> によって説明する、<span class="math inline">\(y\)</span> の変化を知ること、しかも、シンプルに直線で知ることを、 「線形回帰分析」といいます。</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.package(&quot;UsingR&quot;)</span>
-<span class="kw">library</span>(UsingR)</code></pre></div>
-<pre><code>## Loading required package: MASS</code></pre>
-<pre><code>## 
-## Attaching package: &#39;MASS&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
-## 
-##     select</code></pre>
-<pre><code>## Loading required package: HistData</code></pre>
-<pre><code>## Loading required package: Hmisc</code></pre>
-<pre><code>## Loading required package: lattice</code></pre>
-<pre><code>## Loading required package: survival</code></pre>
-<pre><code>## Loading required package: Formula</code></pre>
-<pre><code>## 
-## Attaching package: &#39;Hmisc&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     src, summarize</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     format.pval, units</code></pre>
-<pre><code>## 
-## Attaching package: &#39;UsingR&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:survival&#39;:
-## 
-##     cancer</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(fater.son)</code></pre></div>
-<pre><code>## Warning in data(fater.son): data set &#39;fater.son&#39; not found</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sheight <span class="op">~</span><span class="st"> </span>fheight, <span class="dt">data=</span>father.son,<span class="dt">bty=</span><span class="st">&quot;l&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)</code></pre></div>
-<p><img src="stat_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="stat_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><span class="math display">\[
 y_i = \beta_0 + \beta_1 x_{i} + \epsilon_i
 \]</span></p>

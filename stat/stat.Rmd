@@ -37,7 +37,7 @@ library(knitr)
 library(reticulate)
 ```
 
-```{r}
+```{r include=FALSE}
 #install.packages("dplyr")
 library(dplyr)
 library(ggplot2)
@@ -53,11 +53,13 @@ library(ggplot2)
 ことが上達します。
 
 筆者は、
+
  - 慶應義塾大学 システムデザイン・マネジメントで行動科学の研究を行う、日常的にデータ分析を行う研究者であるとともに、
  - ビジネスと経営のフィールドでも多くの提案を通し、人生の時間を賭けるに値すると感じる、様々なプロジェクトを実現してきました。
  - 難しい行動科学の内容を一般向けにわかりやすく記載した「悩みにふりまわされて しんどいあなたへ」の著書があります。
 
 また、統計やデータサイエンスまわりでは
+
  - 東京大学工学部で、卒論で三次元データを取り扱った
  - シンガポール国立大学のMBAプログラムで、Overallの成績4.7/5.0
  - MITのオンラインプログラムData Analysis for Social Scientistsにて、Student TAとして選ばれる。
@@ -67,7 +69,7 @@ library(ggplot2)
 
 筆者はRとPythonを使いますが、[こちらのGithubのリポジトリに利用するファイルをすべて置いて](https://github.com/ryouen/ryouen.github.io/tree/master/stat)おきます。環境構築には、Rは[R 3.5.2](https://cran.r-project.org/src/base/R-3) と、[RStudio](https://www.rstudio.com/products/rstudio/download/)、Pythonは[Anaconda](https://www.anaconda.com/distribution/)のJupyter Notebookを使っています。
 
-```{r}
+```{r include=FALSE}
 scatter <- ggplot(data=iris, aes(x = Sepal.Length, y = Sepal.Width)) 
 scatter + geom_point(aes(color=Species, shape=Species)) +
   xlab("Sepal Length") +  ylab("Sepal Width") +
@@ -186,10 +188,13 @@ $y$ を興味のある変数、より理解したい変数とし、つまり、t
 
 
 
-```{r}
+```{r include=FALSE}
 #install.package("UsingR")
 library(UsingR)
 data(fater.son)
+```
+
+```{r}
 plot(sheight ~ fheight, data=father.son,bty="l",pch=20)
 ```
 
