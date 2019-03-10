@@ -65,7 +65,7 @@ library(ggplot2)
  などのバックグラウンドがあります。
 
 
-筆者はRとPythonを使いますが、[こちらのGithubのリポジトリに利用するファイルをすべて置いて](https://github.com/ryouen/ryouen.github.io/tree/master/stat)おきます。環境構築には、Rは[R 3.5.2](https://cran.r-project.org/src/base/R-3) と、[RStudio](https://www.rstudio.com/products/rstudio/download/)、Pythonは[Anaconda](https://docs.anaconda.com/anaconda/install/)のJupyter Notebookを使っています。
+筆者はRとPythonを使いますが、[こちらのGithubのリポジトリに利用するファイルをすべて置いて](https://github.com/ryouen/ryouen.github.io/tree/master/stat)おきます。環境構築には、Rは[R 3.5.2](https://cran.r-project.org/src/base/R-3) と、[RStudio](https://www.rstudio.com/products/rstudio/download/)、Pythonは[Anaconda](https://www.anaconda.com/distribution/)のJupyter Notebookを使っています。
 
 ```{r}
 scatter <- ggplot(data=iris, aes(x = Sepal.Length, y = Sepal.Width)) 
@@ -156,8 +156,47 @@ scatter + geom_point(aes(color=Species, shape=Species)) +
 新しい数式に、時間をかけて慣れ親しんでいきましょう。
 
 
-#線形回帰分析
-回帰分析とは、
+#線形回帰分析 - Linear Regression
+
+"Linear Regression is by far a most useful tool to analyze data that human being has."
+
+「線形回帰は、いまのところ、人類が持てる最高のデータ分析ツールだ」 - by Prof.Simonoff Jeffrey
+
+
+
+回帰分析をするとき、たとえば身長と体重、人口密度と犯罪率、父親の身長と息子の身長、マーケティング予算と売上など、
+２つの要素 - 「変数」と呼び、それぞれ$x, y$で表現することが多いのですが、その関係に興味があります。
+
+$y$ を興味のある変数、より理解したい変数とし、つまり、target variable, (ターゲット・目的変数)と呼びます。
+
+この$y$を、$x$ を使って予測したり分析したり説明したりするので、$x$をpredicting variable(説明変数)と呼びます。
+
+
+例えば、あなたがマーケティングの責任者であれば、マーケティング予算が、説明変数$x$、それによって予測する売上が、目的変数$y$ということになります。これは、マーケティング予算は適切な権限があれば、決めることができる(操作可能)ですが、売上は結果に過ぎないため、売上を直接コントロールすることはできないからです。
+
+
+また、もし「どこに住もうかな」とあなたが考えているとすると、
+人口密度が説明変数 $x$ で、犯罪率が目的変数 $y$ だということになります。
+住む場所、つまり人口密度はこれから選ぶことができますが、犯罪率自体はコントロールできないからです。
+
+
+このように、$x$ によって説明する、$y$ の変化を知ること、しかも、シンプルに直線で知ることを、
+「線形回帰分析」といいます。
+
+
+
+
+```{r}
+#install.package("UsingR")
+library(UsingR)
+data(fater.son)
+plot(sheight ~ fheight, data=father.son,bty="l",pch=20)
+```
+
+
+\[
+y_i = \beta_0 + \beta_1 x_{i} + \epsilon_i
+\]
 
 
 

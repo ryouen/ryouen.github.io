@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>4 参考文献 | 意思決定のための、ゼロからはじめる統計とデータ分析のお話</title>
-  <meta name="description" content="4 参考文献 | 意思決定のための、ゼロからはじめる統計とデータ分析のお話">
+  <title>1 線形回帰分析 - Linear Regression | 意思決定のための、ゼロからはじめる統計とデータ分析のお話</title>
+  <meta name="description" content="1 線形回帰分析 - Linear Regression | 意思決定のための、ゼロからはじめる統計とデータ分析のお話">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="4 参考文献 | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
+  <meta property="og:title" content="1 線形回帰分析 - Linear Regression | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 参考文献 | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
+  <meta name="twitter:title" content="1 線形回帰分析 - Linear Regression | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="section-3.html">
-
+<link rel="prev" href="index.html">
+<link rel="next" href="section-2.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -129,19 +129,63 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="section-4" class="section level1">
-<h1><span class="header-section-number">4</span> 参考文献</h1>
-<ul>
-<li>STAT-GB/2301 by Jeffrey S. Simonoff in New York University</li>
-</ul>
+<div id="---linear-regression" class="section level1">
+<h1><span class="header-section-number">1</span> 線形回帰分析 - Linear Regression</h1>
+<p>“Linear Regression is by far a most useful tool to analyze data that human being has.”</p>
+<p>「線形回帰は、いまのところ、人類が持てる最高のデータ分析ツールだ」 - by Prof.Simonoff Jeffrey</p>
+<p>回帰分析をするとき、たとえば身長と体重、人口密度と犯罪率、父親の身長と息子の身長、マーケティング予算と売上など、 ２つの要素 - 「変数」と呼び、それぞれ<span class="math inline">\(x, y\)</span>で表現することが多いのですが、その関係に興味があります。</p>
+<p><span class="math inline">\(y\)</span> を興味のある変数、より理解したい変数とし、つまり、target variable, (ターゲット・目的変数)と呼びます。</p>
+<p>この<span class="math inline">\(y\)</span>を、<span class="math inline">\(x\)</span> を使って予測したり分析したり説明したりするので、<span class="math inline">\(x\)</span>をpredicting variable(説明変数)と呼びます。</p>
+<p>例えば、あなたがマーケティングの責任者であれば、マーケティング予算が、説明変数<span class="math inline">\(x\)</span>、それによって予測する売上が、目的変数<span class="math inline">\(y\)</span>ということになります。これは、マーケティング予算は適切な権限があれば、決めることができる(操作可能)ですが、売上は結果に過ぎないため、売上を直接コントロールすることはできないからです。</p>
+<p>また、もし「どこに住もうかな」とあなたが考えているとすると、 人口密度が説明変数 <span class="math inline">\(x\)</span> で、犯罪率が目的変数 <span class="math inline">\(y\)</span> だということになります。 住む場所、つまり人口密度はこれから選ぶことができますが、犯罪率自体はコントロールできないからです。</p>
+<p>このように、<span class="math inline">\(x\)</span> によって説明する、<span class="math inline">\(y\)</span> の変化を知ること、しかも、シンプルに直線で知ることを、 「線形回帰分析」といいます。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.package(&quot;UsingR&quot;)</span>
+<span class="kw">library</span>(UsingR)</code></pre></div>
+<pre><code>## Loading required package: MASS</code></pre>
+<pre><code>## 
+## Attaching package: &#39;MASS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     select</code></pre>
+<pre><code>## Loading required package: HistData</code></pre>
+<pre><code>## Loading required package: Hmisc</code></pre>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## Loading required package: survival</code></pre>
+<pre><code>## Loading required package: Formula</code></pre>
+<pre><code>## 
+## Attaching package: &#39;Hmisc&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
+## 
+##     src, summarize</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     format.pval, units</code></pre>
+<pre><code>## 
+## Attaching package: &#39;UsingR&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:survival&#39;:
+## 
+##     cancer</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(fater.son)</code></pre></div>
+<pre><code>## Warning in data(fater.son): data set &#39;fater.son&#39; not found</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sheight <span class="op">~</span><span class="st"> </span>fheight, <span class="dt">data=</span>father.son,<span class="dt">bty=</span><span class="st">&quot;l&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)</code></pre></div>
+<p><img src="stat_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_{i} + \epsilon_i
+\]</span></p>
+<div id="section-1.1" class="section level2">
+<h2><span class="header-section-number">1.1</span> 回帰分析とは</h2>
+</div>
+<div id="section-1.2" class="section level2">
+<h2><span class="header-section-number">1.2</span> 線形回帰</h2>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="section-3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

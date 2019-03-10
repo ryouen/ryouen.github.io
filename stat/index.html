@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="section-1.html">
+<link rel="next" href="-linear-regression.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -105,9 +105,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#e695b0e5bc8fe381afe3808ce383a9e382afe3808de38292e38199e3828be3819fe38281e381abe38182e3828b"><i class="fa fa-check"></i>数式は「ラク」をするためにある</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#e99ba3e38197e38184e381aee381a7e381afe381aae3818fe38081e79fa5e38289e381aae38184"><i class="fa fa-check"></i>難しいのではなく、知らない</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="section-1.html"><a href="section-1.html"><i class="fa fa-check"></i><b>1</b> 線形回帰分析</a><ul>
-<li class="chapter" data-level="1.1" data-path="section-1.html"><a href="section-1.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 回帰分析とは</a></li>
-<li class="chapter" data-level="1.2" data-path="section-1.html"><a href="section-1.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 線形回帰</a></li>
+<li class="chapter" data-level="1" data-path="-linear-regression.html"><a href="-linear-regression.html"><i class="fa fa-check"></i><b>1</b> 線形回帰分析 - Linear Regression</a><ul>
+<li class="chapter" data-level="1.1" data-path="-linear-regression.html"><a href="-linear-regression.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 回帰分析とは</a></li>
+<li class="chapter" data-level="1.2" data-path="-linear-regression.html"><a href="-linear-regression.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 線形回帰</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i><b>2</b> 重回帰分析</a></li>
 <li class="chapter" data-level="3" data-path="section-3.html"><a href="section-3.html"><i class="fa fa-check"></i><b>3</b> 統計デモ</a></li>
@@ -140,7 +140,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>データ分析と統計の基礎を学ぶことで、 - 未来を予測し、自分や相手、顧客の行動を制御する - いま、何が起きているのか。起きていることから、真実に迫る構造を抽出する ことが上達します。</p>
 <p>筆者は、 - 慶應義塾大学 システムデザイン・マネジメントで行動科学の研究を行う、日常的にデータ分析を行う研究者であるとともに、 - ビジネスと経営のフィールドでも多くの提案を通し、人生の時間を賭けるに値すると感じる、様々なプロジェクトを実現してきました。 - 難しい行動科学の内容を一般向けにわかりやすく記載した「悩みにふりまわされて しんどいあなたへ」の著書があります。</p>
 <p>また、統計やデータサイエンスまわりでは - 東京大学工学部で、卒論で三次元データを取り扱った - シンガポール国立大学のMBAプログラムで、Overallの成績4.7/5.0 - MITのオンラインプログラムData Analysis for Social Scientistsにて、Student TAとして選ばれる。 - New York Universityで Data Science for Businesを教えるProvost先生/統計の専門家Simonoff先生に師事 などのバックグラウンドがあります。</p>
-<p>筆者はRとPythonを使いますが、<a href="https://github.com/ryouen/ryouen.github.io/tree/master/stat">こちらのGithubのリポジトリに利用するファイルをすべて置いて</a>おきます。環境構築には、Rは<a href="https://cran.r-project.org/src/base/R-3">R 3.5.2</a> と、<a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a>、Pythonは<a href="https://docs.anaconda.com/anaconda/install/">Anaconda</a>のJupyter Notebookを使っています。</p>
+<p>筆者はRとPythonを使いますが、<a href="https://github.com/ryouen/ryouen.github.io/tree/master/stat">こちらのGithubのリポジトリに利用するファイルをすべて置いて</a>おきます。環境構築には、Rは<a href="https://cran.r-project.org/src/base/R-3">R 3.5.2</a> と、<a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a>、Pythonは<a href="https://www.anaconda.com/distribution/">Anaconda</a>のJupyter Notebookを使っています。</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scatter &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data=</span>iris, <span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Sepal.Width)) 
 scatter <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span>Species, <span class="dt">shape=</span>Species)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Sepal Length&quot;</span>) <span class="op">+</span><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Sepal Width&quot;</span>) <span class="op">+</span>
@@ -202,7 +202,7 @@ scatter <span class="op">+</span><span class="st"> </span><span class="kw">geom_
         </div>
       </div>
 
-<a href="section-1.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="-linear-regression.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
