@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>2 線形回帰分析 - Linear Regression | 意思決定のための、ゼロからはじめる統計とデータ分析のお話</title>
-  <meta name="description" content="2 線形回帰分析 - Linear Regression | 意思決定のための、ゼロからはじめる統計とデータ分析のお話">
+  <title>1 回帰分析(Regression)とは | 意思決定のための、ゼロからはじめる統計とデータ分析のお話</title>
+  <meta name="description" content="1 回帰分析(Regression)とは | 意思決定のための、ゼロからはじめる統計とデータ分析のお話">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="2 線形回帰分析 - Linear Regression | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
+  <meta property="og:title" content="1 回帰分析(Regression)とは | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 線形回帰分析 - Linear Regression | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
+  <meta name="twitter:title" content="1 回帰分析(Regression)とは | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="regression.html">
-<link rel="next" href="section-3.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="-linear-regression.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -130,36 +130,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="---linear-regression" class="section level1">
-<h1><span class="header-section-number">2</span> 線形回帰分析 - Linear Regression</h1>
-<blockquote>
-<p>All model is wrong but some are useful. Model is a representation of truth. It is not actually the truth. We are assuming reasonable representation.</p>
-</blockquote>
-<p>「線形」回帰分析、あるいは、Simple Regressionをするとき、たとえば身長と体重、人口密度と犯罪率、父親の身長と息子の身長、マーケティング予算と売上など、 ２つの要素 - 「変数」と呼び、それぞれ<span class="math inline">\(x, y\)</span>で表現することが多いのですが、その関係に興味があります。</p>
-<p><span class="math inline">\(y\)</span> を興味のある変数、より理解したい変数とし、つまり、target variable, (ターゲット・目的変数)と呼びます。</p>
-<p>この<span class="math inline">\(y\)</span>を、<span class="math inline">\(x\)</span> を使って予測したり分析したり説明したりするので、<span class="math inline">\(x\)</span>を説明変数(predictor, predicting variableと呼びます。</p>
-<p>例えば、あなたがマーケティングの責任者であれば、マーケティング予算が、説明変数<span class="math inline">\(x\)</span>、それによって予測する売上が、目的変数<span class="math inline">\(y\)</span>ということになります。これは、マーケティング予算は適切な権限があれば、決めることができる(操作可能)ですが、売上は結果に過ぎないため、売上を直接コントロールすることはできないからです。</p>
-<p>また、もし「どこに住もうかな」とあなたが考えているとすると、 人口密度が説明変数 <span class="math inline">\(x\)</span> で、犯罪率が目的変数 <span class="math inline">\(y\)</span> だということになります。 住む場所、つまり人口密度はこれから選ぶことができますが、犯罪率自体はコントロールできないからです。</p>
-<p>このように、<span class="math inline">\(x\)</span> によって説明する、<span class="math inline">\(y\)</span> の変化を知ること、しかも、シンプルに直線で知ることを、 「線形回帰分析」といいます。</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sheight <span class="op">~</span><span class="st"> </span>fheight, <span class="dt">data=</span>father.son,<span class="dt">bty=</span><span class="st">&quot;l&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)</code></pre></div>
-<p><img src="stat_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p><span class="math display">\[
-y_i = \beta_0 + \beta_1 x_{i} + \epsilon_i
-\]</span></p>
-<div id="section-2.1" class="section level2">
-<h2><span class="header-section-number">2.1</span> 回帰分析とは</h2>
-</div>
-<div id="section-2.2" class="section level2">
-<h2><span class="header-section-number">2.2</span> 線形回帰</h2>
-</div>
+<div id="regression" class="section level1">
+<h1><span class="header-section-number">1</span> 回帰分析(Regression)とは</h1>
+<p>回帰(Regression)とは、<strong>1つの興味がある、理解したいデータ(目的変数/Target)</strong>を、 他のいくつかの、よくわかっているパラメーターで説明することです。</p>
+<p><a href="https://amzn.to/2Tsa6yd">Handbook of Regression Analysis</a> を書いたNew York UniversityのProf.Simonoff Jeffreyは、 <strong>「回帰は、いまのところ、人類が持てる最高のデータ分析ツールだ」</strong> (Regression is by far in a way most useful Data Analytic method than every data mining method ever invented) と言いました。</p>
+<p>これは、回帰分析だけが、次の３つのことができるからです。</p>
+<ul>
+<li><p>1.Prediction: 観察できていないものの予測/時間的な予測(未来予測)</p></li>
+<li><p>2.Model building: 関係(relationship of variables)を理解するため(これを増やすと、売上が上がる)</p></li>
+<li><p>3.Testing Hypothesis: 仮説を確認(test)するため</p></li>
+</ul>
+<p>予測だけや、モデルづくりだけができるメソッドは他にもありますが、 回帰だけが、これら３つを同時に満たすのです。</p>
+<p>それでは、回帰分析の中でも一番シンプルな回帰、線形回帰分析を 次の章からはじめましょう。</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="section-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="-linear-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

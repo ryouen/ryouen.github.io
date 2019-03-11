@@ -158,20 +158,46 @@ scatter + geom_point(aes(color=Species, shape=Species)) +
 新しい数式に、時間をかけて慣れ親しんでいきましょう。
 
 
+#回帰分析(Regression)とは
+
+回帰(Regression)とは、**1つの興味がある、理解したいデータ(目的変数/Target)**を、
+他のいくつかの、よくわかっているパラメーターで説明することです。
+
+
+[Handbook of Regression Analysis](https://amzn.to/2Tsa6yd) を書いたNew York UniversityのProf.Simonoff Jeffreyは、
+**「回帰は、いまのところ、人類が持てる最高のデータ分析ツールだ」**
+(Regression is by far in a way most useful Data Analytic method than every data mining method ever invented)
+と言いました。
+
+これは、回帰分析だけが、次の３つのことができるからです。
+
+- 1.Prediction: 観察できていないものの予測/時間的な予測(未来予測)
+
+- 2.Model building: 関係(relationship of variables)を理解するため(これを増やすと、売上が上がる)
+
+- 3.Testing Hypothesis: 仮説を確認(test)するため
+
+予測だけや、モデルづくりだけができるメソッドは他にもありますが、
+回帰だけが、これら３つを同時に満たすのです。
+
+それでは、回帰分析の中でも一番シンプルな回帰、線形回帰分析を
+次の章からはじめましょう。
+
+
 #線形回帰分析 - Linear Regression
 
-"Linear Regression is by far a most useful tool to analyze data that human being has."
 
-「線形回帰は、いまのところ、人類が持てる最高のデータ分析ツールだ」 - by Prof.Simonoff Jeffrey
+>All model is wrong but some are useful. Model is a representation of truth.
+>It is not actually the truth.
+>We are assuming reasonable representation.
 
 
-
-回帰分析をするとき、たとえば身長と体重、人口密度と犯罪率、父親の身長と息子の身長、マーケティング予算と売上など、
+「線形」回帰分析、あるいは、Simple Regressionをするとき、たとえば身長と体重、人口密度と犯罪率、父親の身長と息子の身長、マーケティング予算と売上など、
 ２つの要素 - 「変数」と呼び、それぞれ$x, y$で表現することが多いのですが、その関係に興味があります。
 
 $y$ を興味のある変数、より理解したい変数とし、つまり、target variable, (ターゲット・目的変数)と呼びます。
 
-この$y$を、$x$ を使って予測したり分析したり説明したりするので、$x$をpredicting variable(説明変数)と呼びます。
+この$y$を、$x$ を使って予測したり分析したり説明したりするので、$x$を説明変数(predictor, predicting variableと呼びます。
 
 
 例えば、あなたがマーケティングの責任者であれば、マーケティング予算が、説明変数$x$、それによって予測する売上が、目的変数$y$ということになります。これは、マーケティング予算は適切な権限があれば、決めることができる(操作可能)ですが、売上は結果に過ぎないため、売上を直接コントロールすることはできないからです。
