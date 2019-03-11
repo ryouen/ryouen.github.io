@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>2 線形回帰分析 - Linear Regression 1.単回帰分析 | 意思決定のための、ゼロからはじめる統計とデータ分析のお話</title>
+  <meta name="description" content="2 線形回帰分析 - Linear Regression 1.単回帰分析 | 意思決定のための、ゼロからはじめる統計とデータ分析のお話">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="2 線形回帰分析 - Linear Regression 1.単回帰分析 | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 線形回帰分析 - Linear Regression 1.単回帰分析 | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
+  
+  
+  
+
+<meta name="author" content="石井 遼介 / @ryouen">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="regression.html">
+<link rel="next" href="-linear-regression-2-.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>index</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#e69cace69bb8e381aee789b9e5beb4"><i class="fa fa-check"></i>本書の特徴</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#e5afbee8b1a1e8aaade88085"><i class="fa fa-check"></i>対象読者</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#e695b0e5bc8fe381afe38193e3828fe3818fe381aae38184"><i class="fa fa-check"></i>数式はこわくない</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#e695b0e5bc8fe381afe3808ce383a9e382afe3808de38292e38199e3828be3819fe38281e381abe38182e3828b"><i class="fa fa-check"></i>数式は「ラク」をするためにある</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#e99ba3e38197e38184e381aee381a7e381afe381aae3818fe38081e79fa5e38289e381aae38184"><i class="fa fa-check"></i>難しいのではなく、知らない</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>1</b> 最強分析ツール、回帰分析(Regression)！</a></li>
+<li class="chapter" data-level="2" data-path="-linear-regression-1-.html"><a href="-linear-regression-1-.html"><i class="fa fa-check"></i><b>2</b> 線形回帰分析 - Linear Regression 1.単回帰分析</a><ul>
+<li class="chapter" data-level="2.1" data-path="-linear-regression-1-.html"><a href="-linear-regression-1-.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 回帰分析とは</a></li>
+<li class="chapter" data-level="2.2" data-path="-linear-regression-1-.html"><a href="-linear-regression-1-.html#section-2.2"><i class="fa fa-check"></i><b>2.2</b> 線形回帰</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="-linear-regression-2-.html"><a href="-linear-regression-2-.html"><i class="fa fa-check"></i><b>3</b> 線形回帰分析 - Linear Regression 2.重回帰</a></li>
+<li class="chapter" data-level="4" data-path="section-4.html"><a href="section-4.html"><i class="fa fa-check"></i><b>4</b> 統計デモ</a></li>
+<li class="chapter" data-level="5" data-path="section-5.html"><a href="section-5.html"><i class="fa fa-check"></i><b>5</b> 参考文献</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">意思決定のための、ゼロからはじめる統計とデータ分析のお話</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="---linear-regression-1." class="section level1">
+<h1><span class="header-section-number">2</span> 線形回帰分析 - Linear Regression 1.単回帰分析</h1>
+<blockquote>
+<p>All model is wrong but some are useful.</p>
+<p>Model is a representation of truth. It is not actually the truth.</p>
+<p>We are assuming reasonable representation.</p>
+</blockquote>
+<blockquote>
+<p>すべてのモデルは「真実」ではないが、役に立つ。</p>
+<p>モデルとは、真実を「表象」するものであり「真実そのもの」ではない</p>
+<p>我々は、合理的な表象を想定するのだ。</p>
+</blockquote>
+<p>「単回帰」分析、あるいは、Simple Regressionをするとき、たとえば身長と体重、人口密度と犯罪率、父親の身長と息子の身長、マーケティング予算と売上など、 <strong>２つ</strong>の要素 - 「変数」と呼び、それぞれ<span class="math inline">\(x, y\)</span>で表現することが多いのですが、その関係に興味があります。</p>
+<p><span class="math inline">\(y\)</span> を興味のある変数、より理解したい変数とし、つまり、target variable, (ターゲット・目的変数)と呼びます。</p>
+<p>この<span class="math inline">\({}y{} を、x\)</span>を使って予測したり分析したり説明したりするので、<span class="math inline">\(x\)</span>を説明変数(predictor, predicting variableと呼びます。</p>
+<p>例えば、あなたがマーケティングの責任者であれば、マーケティング予算が、説明変数<span class="math inline">\(x\)</span>、それによって予測する売上が、目的変数<span class="math inline">\(y\)</span>ということになります。これは、マーケティング予算は適切な権限があれば、決めることができる(操作可能)ですが、売上は結果に過ぎないため、売上を直接コントロールすることはできないからです。</p>
+<p>また、もし「どこに住もうかな」とあなたが考えているとすると、 人口密度が説明変数 <span class="math inline">\(x\)</span> で、犯罪率が目的変数 <span class="math inline">\(y\)</span> だということになります。 住む場所、つまり人口密度はこれから選ぶことができますが、犯罪率自体はコントロールできないからです。</p>
+<p>このように、<span class="math inline">\(x\)</span> によって説明する、<span class="math inline">\(y\)</span> の変化を知ること、しかも、<strong>シンプルに直線で知ることを、「単回帰分析」</strong>といいます。</p>
+<p>まず、単回帰分析のツールや関数を振り回す前に、散布図(Scatter plot)を書きます。</p>
+<p>散布図とは、変数２つを、それぞれ横軸と縦軸にとった図を言います。まずは見てみましょう。</p>
+<p>このような、</p>
+<ul>
+<li>1番めのご家庭は、お父さんの身長が165.22cmで、お子さんは151.83cm、</li>
+<li>2番めのご家庭は、お父さんの身長が160.65cmで、お子さんは160.56cm</li>
+</ul>
+<p>というようなデータがあるとします。</p>
+<pre><code>##     Father      Son
+## 1 165.2232 151.8368
+## 2 160.6574 160.5637
+## 3 164.9865 160.8897
+## 4 167.0113 159.4926
+## 5 155.2886 163.2741
+## 6 160.0773 163.1752</code></pre>
+<p>このような、<span class="math inline">\((父親/Father, 息子/Son)\)</span>のデータの組を、散布図で表現すると、次のようになります。</p>
+<p><img src="stat_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>目的変数(target variable)である<span class="math inline">\(y\)</span>を縦軸、 説明変数(predicting variable)である<span class="math inline">\(x\)</span>を横軸に取ります。 ですから、これは、父親の身長(説明変数)によって、息子の身長(目的変数)が変わるだろうか？を知りたい時の散布図です。</p>
+<p>ひとつひとつの点の場所を見ると、先程の<span class="math inline">\((父親, 息子)\)</span>のデータが、完全に表現されていることがわかります。</p>
+<p>この図では、今回、1000ものご家庭が調査に協力してくれましたが、 <strong>「たった一本の直線で、これら1,000のご家庭データから分かる、【父の身長と子の身長の関係】を表現しよう！」というのが、単回帰のコンセプトです。</strong></p>
+<p>先に、線を引いてしまいましょう</p>
+<p><img src="stat_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><strong>これです！この赤い線を引くことが「単回帰分析」です。</strong> 確かにこの赤い線は、この父と子の背の高さの、 ちょうど真ん中あたりを、うまく通っていそうな感じがします。</p>
+<p>この<strong>適切な赤い線－これを「回帰直線」というのですが－</strong>をもって、統計学者たちは「父と子の、身長の<strong>関係がモデル化できた</strong>」といい、 「父親の身長を教えてくれれば、ある年齢の息子の身長を、高い精度で予測してみせる」と言うわけです。</p>
+<p><strong>全く同じグラフ</strong>を、少しカメラを引いて描写してみると、 こんなふうになります。 <img src="stat_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>では、そのような直線は、どうやって引けばいいのでしょうか？ そもそも、「よい直線」と「ダメな直線」は、どう見分けたらいいのでしょうか？</p>
+<p>例えば、たまたま父親と同じ身長の人が居たとして、 その人が、</p>
+<p>「オレ、パパと同じ身長なんだ。だから、みんなは、パパと同じくらい身長があるのが普通だと思うよ」</p>
+<p>と言ったとましょう。</p>
+<p>彼の主張を、グラフに青線で書き入れると、こうなります。</p>
+<p><img src="stat_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>この青い線は、父親が150cmの時、息子も150cm、父親が160cmの時、息子も160cm…。という点をつないでできた線です。 数学的に書くなら、<span class="math inline">\(y = x\)</span>の直線です。</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_{i} + \epsilon_i
+\]</span></p>
+<div id="section-2.1" class="section level2">
+<h2><span class="header-section-number">2.1</span> 回帰分析とは</h2>
+</div>
+<div id="section-2.2" class="section level2">
+<h2><span class="header-section-number">2.2</span> 線形回帰</h2>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="-linear-regression-2-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

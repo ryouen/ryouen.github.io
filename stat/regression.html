@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>1 回帰分析(Regression)とは | 意思決定のための、ゼロからはじめる統計とデータ分析のお話</title>
-  <meta name="description" content="1 回帰分析(Regression)とは | 意思決定のための、ゼロからはじめる統計とデータ分析のお話">
+  <title>1 最強分析ツール、回帰分析(Regression)！ | 意思決定のための、ゼロからはじめる統計とデータ分析のお話</title>
+  <meta name="description" content="1 最強分析ツール、回帰分析(Regression)！ | 意思決定のための、ゼロからはじめる統計とデータ分析のお話">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="1 回帰分析(Regression)とは | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
+  <meta property="og:title" content="1 最強分析ツール、回帰分析(Regression)！ | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 回帰分析(Regression)とは | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
+  <meta name="twitter:title" content="1 最強分析ツール、回帰分析(Regression)！ | 意思決定のための、ゼロからはじめる統計とデータ分析のお話" />
   
   
   
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html">
-<link rel="next" href="-linear-regression.html">
+<link rel="next" href="-linear-regression-1-.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,43 +49,6 @@
 
 
 
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-</style>
 
 </head>
 
@@ -100,17 +63,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>index</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#e69cace69bb8e381aee789b9e5beb4"><i class="fa fa-check"></i>本書の特徴</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#e5afbee8b1a1e8aaade88085"><i class="fa fa-check"></i>対象読者</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#e695b0e5bc8fe381afe38193e3828fe3818fe381aae38184"><i class="fa fa-check"></i>数式はこわくない</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#e695b0e5bc8fe381afe3808ce383a9e382afe3808de38292e38199e3828be3819fe38281e381abe38182e3828b"><i class="fa fa-check"></i>数式は「ラク」をするためにある</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#e99ba3e38197e38184e381aee381a7e381afe381aae3818fe38081e79fa5e38289e381aae38184"><i class="fa fa-check"></i>難しいのではなく、知らない</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>1</b> 回帰分析(Regression)とは</a></li>
-<li class="chapter" data-level="2" data-path="-linear-regression.html"><a href="-linear-regression.html"><i class="fa fa-check"></i><b>2</b> 線形回帰分析 - Linear Regression</a><ul>
-<li class="chapter" data-level="2.1" data-path="-linear-regression.html"><a href="-linear-regression.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 回帰分析とは</a></li>
-<li class="chapter" data-level="2.2" data-path="-linear-regression.html"><a href="-linear-regression.html#section-2.2"><i class="fa fa-check"></i><b>2.2</b> 線形回帰</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="section-3.html"><a href="section-3.html"><i class="fa fa-check"></i><b>3</b> 重回帰分析</a></li>
+<li class="chapter" data-level="1" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>1</b> 最強分析ツール、回帰分析(Regression)！</a></li>
+<li class="chapter" data-level="2" data-path="-linear-regression-1-.html"><a href="-linear-regression-1-.html"><i class="fa fa-check"></i><b>2</b> 線形回帰分析 - Linear Regression 1.単回帰分析</a><ul>
+<li class="chapter" data-level="2.1" data-path="-linear-regression-1-.html"><a href="-linear-regression-1-.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 回帰分析とは</a></li>
+<li class="chapter" data-level="2.2" data-path="-linear-regression-1-.html"><a href="-linear-regression-1-.html#section-2.2"><i class="fa fa-check"></i><b>2.2</b> 線形回帰</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="-linear-regression-2-.html"><a href="-linear-regression-2-.html"><i class="fa fa-check"></i><b>3</b> 線形回帰分析 - Linear Regression 2.重回帰</a></li>
 <li class="chapter" data-level="4" data-path="section-4.html"><a href="section-4.html"><i class="fa fa-check"></i><b>4</b> 統計デモ</a></li>
 <li class="chapter" data-level="5" data-path="section-5.html"><a href="section-5.html"><i class="fa fa-check"></i><b>5</b> 参考文献</a></li>
 </ul>
@@ -131,17 +96,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="regression" class="section level1">
-<h1><span class="header-section-number">1</span> 回帰分析(Regression)とは</h1>
-<p>回帰(Regression)とは、<strong>1つの興味がある、理解したいデータ(目的変数/Target)</strong>を、 他のいくつかの、よくわかっているパラメーターで説明することです。</p>
-<p><a href="https://amzn.to/2Tsa6yd">Handbook of Regression Analysis</a> を書いたNew York UniversityのProf.Simonoff Jeffreyは、 <strong>「回帰は、いまのところ、人類が持てる最高のデータ分析ツールだ」</strong> (Regression is by far in a way most useful Data Analytic method than every data mining method ever invented) と言いました。</p>
-<p>これは、回帰分析だけが、次の３つのことができるからです。</p>
-<ul>
-<li><p>1.Prediction: 観察できていないものの予測/時間的な予測(未来予測)</p></li>
-<li><p>2.Model building: 関係(relationship of variables)を理解するため(これを増やすと、売上が上がる)</p></li>
-<li><p>3.Testing Hypothesis: 仮説を確認(test)するため</p></li>
-</ul>
-<p>予測だけや、モデルづくりだけができるメソッドは他にもありますが、 回帰だけが、これら３つを同時に満たすのです。</p>
-<p>それでは、回帰分析の中でも一番シンプルな回帰、線形回帰分析を 次の章からはじめましょう。</p>
+<h1><span class="header-section-number">1</span> 最強分析ツール、回帰分析(Regression)！</h1>
+<p>回帰(Regression)とは、<strong>1つの興味がある、予測や理解したいデータ(目的変数/Target)</strong>を、 他のいくつかの、よくわかっているパラメーターで説明することです。</p>
+<p>例えば、「売上」という「目的変数」に興味があるとき、もしかすると、「営業マンの数」と「投下する広告宣伝費」という2つの変数を使って、 予測することができるかもしれません。「例えば、マーケティング予算が変わらないなら、あと３人、セールスパーソンを採用すれば、予算が達成できるのではないか」などと言ったことです。</p>
+<p>2012年に回帰分析ハンドブック<a href="https://amzn.to/2Tsa6yd">Handbook of Regression Analysis</a> を書いたニューヨーク大学教授のSimonoff Jeffrey先生は、</p>
+<blockquote>
+<p><strong>「回帰は、いまのところ、人類が持てる最高のデータ分析ツールだ」</strong></p>
+</blockquote>
+<blockquote>
+<p>Regression is by far in a way most useful Data Analytic method every data mining method ever invented.</p>
+</blockquote>
+<p>と言いました。</p>
+<p>ラノベであれば、</p>
+<blockquote>
+<p>『邪悪なデータめ！喰らえ ーー最強分析奥義（リガレッション）！！』</p>
+</blockquote>
+<p>などとなる ところでしょうか。</p>
+<p>なぜ、そんなにも「最強」と言い切れるのか？ それは、回帰分析だけが、次の３つのことが、<strong>すべて</strong> できるからです。</p>
+<ol style="list-style-type: decimal">
+<li>Prediction / forecasting: 観察できていないものの予測/時間的な予測(未来予測)</li>
+<li>Model building: 変数間の関係性(relationship of variables)を理解するため(これを増やすと、売上が上がる)</li>
+<li>Testing Hypothesis: 仮説を確認(test)するため</li>
+</ol>
+<p>予測だけや、モデルづくりだけができるメソッド/分析ツールは他にもありますが、 <strong>回帰だけが、これら３つを同時に満たす</strong>のです。</p>
+<p>それでは、回帰分析の中でも一番シンプルな回帰、「線形回帰(Linear Regression)」を 次の章からはじめましょう。</p>
 </div>
             </section>
 
@@ -149,7 +127,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="-linear-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="-linear-regression-1-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
