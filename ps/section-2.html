@@ -63,9 +63,11 @@
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="situation.html"><a href="situation.html"><i class="fa fa-check"></i><b>1</b> Situation</a><ul>
-<li class="chapter" data-level="1.1" data-path="situation.html"><a href="situation.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 4因子</a></li>
+<li class="chapter" data-level="1.1" data-path="situation.html"><a href="situation.html#-4"><i class="fa fa-check"></i><b>1.1</b> 日本版 4因子</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i><b>2</b> 分類結果</a></li>
+<li class="chapter" data-level="2" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i><b>2</b> 分類結果</a><ul>
+<li class="chapter" data-level="2.1" data-path="section-2.html"><a href="section-2.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 因子①「話しやすさ」</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -451,6 +453,8 @@
 </tr>
 </tbody>
 </table>
+<p>また、corrに、自分自身を除くすべての質問項目との相関係数の平均値を示した。 上記、相関係数のHeatmapを下記の通り示す。</p>
+<p>“SFT16”, “SFT28”については、特に低いスコアを示したため、今後の検討において留意する。</p>
 <pre><code>##   Var1 Var2 value
 ## 1 SFT1 SFT1  1.00
 ## 2 SFT2 SFT1  0.62
@@ -458,7 +462,158 @@
 ## 4 SFT4 SFT1  0.52
 ## 5 SFT5 SFT1  0.44
 ## 6 SFT6 SFT1  0.61</code></pre>
-<p><img src="190311_analysis_on_PS_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="190312_analysis_on_PS_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div id="section-2.1" class="section level2">
+<h2><span class="header-section-number">2.1</span> 因子①「話しやすさ」</h2>
+<p>次の14個を話しやすさ因子として特定した。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Opp</th>
+<th align="left">Questions</th>
+<th align="right">Corr</th>
+<th align="left">規動状</th>
+<th align="left">X4因子</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">SFT12</td>
+<td align="left">*</td>
+<td align="left">チームの中で、チームリーダーやメンバーから、人格否定をされることがある</td>
+<td align="right">0.4154</td>
+<td align="left">規動状</td>
+<td align="left">助話新</td>
+</tr>
+<tr class="even">
+<td align="left">SFT23</td>
+<td align="left">*</td>
+<td align="left">このチームで発言をしても、何も変わらないと感じる</td>
+<td align="right">0.5692</td>
+<td align="left">状</td>
+<td align="left">話新</td>
+</tr>
+<tr class="odd">
+<td align="left">SFT7</td>
+<td align="left"></td>
+<td align="left">チームの中では、知らないことを知らないといえる</td>
+<td align="right">0.5128</td>
+<td align="left">状</td>
+<td align="left">助話</td>
+</tr>
+<tr class="even">
+<td align="left">SFT20</td>
+<td align="left"></td>
+<td align="left">このチームでは、ちょっとした脱線や雑談をしても許される雰囲気がある</td>
+<td align="right">0.4000</td>
+<td align="left">状</td>
+<td align="left">話</td>
+</tr>
+<tr class="odd">
+<td align="left">SFT15</td>
+<td align="left"></td>
+<td align="left">チームメンバーの意見に、反対意見を述べることは、容易にできる</td>
+<td align="right">0.4308</td>
+<td align="left">状</td>
+<td align="left">話</td>
+</tr>
+<tr class="even">
+<td align="left">SFT8</td>
+<td align="left"></td>
+<td align="left">このチームに新しくアサインされた新人だったとしても、このチームでは自由に発言ができると感じる</td>
+<td align="right">0.4359</td>
+<td align="left">状</td>
+<td align="left">話</td>
+</tr>
+<tr class="odd">
+<td align="left">SFT11</td>
+<td align="left"></td>
+<td align="left">つらい時、しんどい時、休みたい時に、それをチームメンバーに共有することは容易だ</td>
+<td align="right">0.4513</td>
+<td align="left">状</td>
+<td align="left">話</td>
+</tr>
+<tr class="even">
+<td align="left">SFT3</td>
+<td align="left"></td>
+<td align="left">チームメンバー間は、強い信頼関係で結ばれている</td>
+<td align="right">0.5154</td>
+<td align="left">状</td>
+<td align="left">話</td>
+</tr>
+<tr class="odd">
+<td align="left">SFT6</td>
+<td align="left"></td>
+<td align="left">チームの中では、感じたことや気づいたことを自由にシェアできる</td>
+<td align="right">0.5564</td>
+<td align="left">状</td>
+<td align="left">話</td>
+</tr>
+<tr class="even">
+<td align="left">SF1</td>
+<td align="left">*</td>
+<td align="left">もし、このチームでミスをしたら、責められますか？</td>
+<td align="right">0.4000</td>
+<td align="left">規動</td>
+<td align="left">話受</td>
+</tr>
+<tr class="odd">
+<td align="left">SF2</td>
+<td align="left"></td>
+<td align="left">チームメンバーは、やっかいな問題や不都合な出来事について、問題提起することができますか？</td>
+<td align="right">0.4897</td>
+<td align="left">動</td>
+<td align="left">話新</td>
+</tr>
+<tr class="even">
+<td align="left">SFT28</td>
+<td align="left">*</td>
+<td align="left">意見を途中で遮って、自分の意見を喋りはじめるメンバーが居る</td>
+<td align="right">0.2744</td>
+<td align="left">動</td>
+<td align="left">話</td>
+</tr>
+<tr class="odd">
+<td align="left">SFT17</td>
+<td align="left"></td>
+<td align="left">仮に、会議など公式な場では発言しにくくとも、リーダー等への非公式なコミュニケーションチャネルを通じて、考えていることや課題をチーム・組織に伝えられると感じる</td>
+<td align="right">0.5051</td>
+<td align="left">動</td>
+<td align="left">話</td>
+</tr>
+<tr class="even">
+<td align="left">SFT5</td>
+<td align="left"></td>
+<td align="left">チームの会議などで、チームメンバーは役職や年次に関わらず、ほぼ同じ量の発言時間である</td>
+<td align="right">0.3974</td>
+<td align="left">規</td>
+<td align="left">話</td>
+</tr>
+</tbody>
+</table>
+<p>上記について、相関係数を確認すると、下記のとおり。 <img src="190312_analysis_on_PS_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><span class="math inline">\(\text{Cronbach&#39;s}\space{} \alpha \space{}\)</span>を計算する。</p>
+<pre><code>##  raw_alpha std.alpha G6(smc) average_r   S/N      ase  mean    sd median_r
+##     0.9089    0.9124  0.9204    0.4266 10.42 0.008407 5.077 1.076   0.4344</code></pre>
+<p>内部信頼性は、<span class="math inline">\(\alpha_{\text{f1}} = 0.9124 &gt;0.8\)</span></p>
+<p>また、もしその質問項目をdropした際、この信頼性係数<span class="math inline">\(\alpha\)</span>がどのようになるかを下記の通りまとめた。</p>
+<pre><code>##       raw_alpha std.alpha G6(smc) average_r    S/N alpha se   var.r  med.r
+## SFT12    0.9047    0.9088  0.9149    0.4339  9.964 0.008793 0.01780 0.4433
+## SFT23    0.8966    0.9011  0.9089    0.4121  9.114 0.009603 0.01597 0.4206
+## SFT7     0.8972    0.9011  0.9085    0.4120  9.109 0.009513 0.01489 0.4207
+## SFT20    0.9048    0.9087  0.9169    0.4337  9.956 0.008816 0.01716 0.4411
+## SFT15    0.9033    0.9070  0.9149    0.4288  9.758 0.008967 0.01698 0.4348
+## SFT8     0.9018    0.9058  0.9135    0.4253  9.621 0.009087 0.01706 0.4297
+## SFT11    0.9030    0.9068  0.9142    0.4281  9.733 0.008974 0.01712 0.4290
+## SFT3     0.8997    0.9037  0.9117    0.4194  9.389 0.009291 0.01700 0.4337
+## SFT6     0.8957    0.8998  0.9063    0.4084  8.975 0.009675 0.01356 0.4207
+## SF1      0.9067    0.9104  0.9177    0.4388 10.166 0.008622 0.01712 0.4466
+## SF2      0.9013    0.9047  0.9136    0.4221  9.496 0.009142 0.01722 0.4229
+## SFT28    0.9142    0.9165  0.9215    0.4578 10.978 0.007944 0.01094 0.4514
+## SFT17    0.8997    0.9034  0.9122    0.4183  9.348 0.009288 0.01655 0.4207
+## SFT5     0.9057    0.9089  0.9165    0.4342  9.978 0.008729 0.01621 0.4411</code></pre>
+</div>
 </div>
             </section>
 
@@ -512,6 +667,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
